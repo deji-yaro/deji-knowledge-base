@@ -1,16 +1,16 @@
 # deji-knowledge-base
 
-Notes and guides from my homelab, documenting my learning journey as I go.
+Notes and guides from my homelab — documenting my learning journey as I go.
 
 This started as personal Obsidian notes for running my own infrastructure, and turned into a habit of writing things down properly: what I built, what broke, and how I fixed it. Sharing it here as I move into DevOps, since a lot of what's in here reflects the kind of work I want to be doing professionally.
 
 ## Infrastructure overview
 
-![Homelab infrastructure diagram](_canvas/deji-infra-current_log.png)
+![Homelab infrastructure diagram](deji-it/_canvas/deji-infra-current_log.png)
 
 *Redacted high-level view of my current homelab setup.*
 
-![Homelab network diagram](_canvas/deji-network-current_log.png)
+![Homelab network diagram](deji-it/_canvas/deji-network-current_log.png)
 
 *Network topology — routing, VLANs, and VPN endpoints (redacted).*
 
@@ -18,17 +18,17 @@ More diagrams (disk layout, physical wiring, camera setup) live in [`_canvas/`](
 
 ## What's in here
 
-- **Virtualization** - Proxmox cluster setup, GPU/USB passthrough, VM management
-- **TrueNAS SCALE** - storage, backups, self-hosted apps (Nextcloud, Paperless-ngx)
-- **Networking** - pfSense, WireGuard, DNS, VPN configs
-- **Cloud** - Azure (VPN gateways, Entra/AD Connect, Exchange admin), AWS (EC2)
-- **DevOps** - Docker Compose, Ansible playbooks, CI-adjacent tooling
-- **Linux** - day-to-day admin, troubleshooting guides, cheat sheets
-- **Security** -  OSINT tooling, recon workflows, hardening notes
+- **Virtualization** — Proxmox cluster setup, GPU/USB passthrough, VM management
+- **TrueNAS SCALE** — storage, backups, self-hosted apps (Nextcloud, Paperless-ngx)
+- **Networking** — pfSense, WireGuard, DNS, VPN configs
+- **Cloud** — Azure (VPN gateways, Entra/AD Connect, Exchange admin), AWS (EC2)
+- **DevOps** — Docker Compose, Ansible playbooks, CI-adjacent tooling
+- **Linux** — day-to-day admin, troubleshooting guides, cheat sheets
+- **Security** — OSINT tooling, recon workflows, hardening notes
 
 ## Why this exists
 
-I manage this as an actual homelab, not a lab exercise, real hardware, real network, real mistakes. Writing documentation as I go has become part of how I work, and I'm using this repo to also learn Git properly: version control, commit hygiene, and managing a public vs. private copy of the same knowledge base (the private one lives on my self-hosted Forgejo instance, unredacted).
+I manage this as an actual homelab, not a lab exercise — real hardware, real network, real mistakes. Writing documentation as I go has become part of how I work, and I'm using this repo to also learn Git properly: version control, commit hygiene, and managing a public vs. private copy of the same knowledge base (the private one lives on my self-hosted Forgejo instance, unredacted).
 
 ## Structure
 
