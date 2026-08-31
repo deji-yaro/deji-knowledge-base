@@ -1,0 +1,33 @@
+{
+	"nodes":[
+		{"id":"d8b500e618dcc3d0","type":"file","file":"_assets/Brennenstuhl Premium Line 8-Way Switch.jpg","x":140,"y":-1034,"width":399,"height":115},
+		{"id":"d6a4113474a3ebbf","type":"file","file":"_assets/technicolor cga4236tch1.png","x":960,"y":-840,"width":100,"height":201},
+		{"id":"ef4450d0d4181431","type":"file","file":"_assets/HP ProDesk 400 G4 SFF.png","x":762,"y":-480,"width":298,"height":115},
+		{"id":"3bb74d33b92b598d","type":"file","file":"_assets/aruba 1830.webp","x":498,"y":-303,"width":264,"height":149},
+		{"id":"f55557c8f48dad63","type":"file","file":"_assets/Inter-Tech HiPower SP-750CM 750 W.webp","x":236,"y":-154,"width":208,"height":208},
+		{"id":"7ea607ba8c80f1f6","type":"file","file":"_assets/HP Z210.webp","x":-148,"y":2,"width":288,"height":288},
+		{"id":"26cba8dddd584a1b","type":"file","file":"_assets/dell powerdge r640.png","x":-680,"y":-154,"width":400,"height":200},
+		{"id":"bdb045ddddad290e","type":"file","file":"_assets/Zalman Z1 Iceberg White.png","x":-979,"y":-534,"width":227,"height":306},
+		{"id":"fab27de4a960776d","type":"file","file":"_assets/Pasted image 20260824123506.webp","x":-1150,"y":-1020,"width":398,"height":81},
+		{"id":"a08dc472736e22dd","type":"file","file":"_assets/di volio electric desk.png","x":-580,"y":-1740,"width":420,"height":420},
+		{"id":"07882fbb5137e9e5","type":"file","file":"_assets/Pasted image 20260824130851.png","x":-979,"y":-1670,"width":281,"height":281},
+		{"id":"59453ab0193dcda9","type":"file","file":"_assets/samsung ls24r65.png","x":-1900,"y":-1587,"width":400,"height":267},
+		{"id":"402527649d5ac21e","type":"file","file":"_assets/lenovo charger 65W.png","x":-1440,"y":-1670,"width":400,"height":300},
+		{"id":"ad046139743acf89","type":"file","file":"_assets/Pasted image 20260824154235.png","x":1320,"y":-1117,"width":167,"height":167}
+	],
+	"edges":[
+		{"id":"97a3400d613d8cda","fromNode":"d8b500e618dcc3d0","fromSide":"bottom","toNode":"26cba8dddd584a1b","toSide":"top","color":"4","label":"#6"},
+		{"id":"cb67658fc3ac9d82","fromNode":"d8b500e618dcc3d0","fromSide":"bottom","toNode":"d6a4113474a3ebbf","toSide":"top","color":"1","label":"#1"},
+		{"id":"8cffac45d6955070","fromNode":"d8b500e618dcc3d0","fromSide":"bottom","toNode":"ef4450d0d4181431","toSide":"top","color":"1","label":"#2"},
+		{"id":"548215d4507f0914","fromNode":"d8b500e618dcc3d0","fromSide":"bottom","toNode":"3bb74d33b92b598d","toSide":"top","color":"1","label":"#3"},
+		{"id":"6103adc611653849","fromNode":"d8b500e618dcc3d0","fromSide":"bottom","toNode":"7ea607ba8c80f1f6","toSide":"top","color":"2","label":"#5"},
+		{"id":"ae345c5805993dfd","fromNode":"d8b500e618dcc3d0","fromSide":"left","toNode":"fab27de4a960776d","toSide":"right","label":"#8"},
+		{"id":"d89a6511a06ab10a","fromNode":"d8b500e618dcc3d0","fromSide":"bottom","toNode":"f55557c8f48dad63","toSide":"top","color":"2","label":"#4"},
+		{"id":"eed3589695c06ab0","fromNode":"d8b500e618dcc3d0","fromSide":"bottom","toNode":"bdb045ddddad290e","toSide":"top","color":"5","label":"#7"},
+		{"id":"bfd5a721b57fb483","fromNode":"fab27de4a960776d","fromSide":"top","toNode":"a08dc472736e22dd","toSide":"bottom","label":"#1"},
+		{"id":"878f744251d60a50","fromNode":"fab27de4a960776d","fromSide":"top","toNode":"07882fbb5137e9e5","toSide":"bottom","label":"#3"},
+		{"id":"eb76d519eadcddca","fromNode":"fab27de4a960776d","fromSide":"top","toNode":"59453ab0193dcda9","toSide":"bottom","color":"5","label":"#5"},
+		{"id":"12f9299c9b54c61f","fromNode":"fab27de4a960776d","fromSide":"top","toNode":"402527649d5ac21e","toSide":"bottom","label":"#4"},
+		{"id":"f5a219647ae06b4f","fromNode":"ad046139743acf89","fromSide":"left","toNode":"d8b500e618dcc3d0","toSide":"right"}
+	]
+}

@@ -1,0 +1,42 @@
+services:
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      # Admin credentials
+      - GF_SECURITY_ADMIN_USER=[USER]
+      - GF_SECURITY_ADMIN_PASSWORD=[PASSWORD]
+
+      # Install Zabbix plugin
+      - GF_INSTALL_PLUGINS=alexanderzobnin-zabbix-app
+
+      # Timezone (optional, set to your timezone)
+      - GF_DATE_FORMAT=YYYY-MM-DD
+      - GF_DATE_FORMAT_TIME=HH:mm:ss
+
+    # Persistent storage for dashboards and datasources
+    volumes:
+      - grafana_storage:/var/lib/grafana
+
+    # Connect to the shared Zabbix network
+    networks:
+      - shared_zabbix_network
+
+    # Optional: health check
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  grafana_storage:
+
+networks:
+  shared_zabbix_network:
+    external: true
+    name: shared_zabbix_network

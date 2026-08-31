@@ -1,0 +1,82 @@
+---
+- name: Install Zabbix Agent (Classic) - v6.0
+  hosts: [HOST_GROUP]
+  become: true
+  vars:
+    zabbix_server_ip: "[ZABBIX_SERVER_IP]"
+    zabbix_release_url: "[ZABBIX_RELEASE_URL]"
+
+  tasks:
+    - name: Install prerequisite packages
+      apt:
+        name:
+          - wget
+          - gnupg
+        state: present
+        update_cache: true
+
+    - name: Download Zabbix Release Package
+      get_url:
+        url: "{{ zabbix_release_url }}"
+        dest: /tmp/zabbix-release_latest.deb
+        mode: '0644'
+
+    - name: Install Zabbix Release Package via dpkg
+      shell: "dpkg -i /tmp/zabbix-release_latest.deb"
+      args:
+        creates: /etc/apt/sources.list.d/zabbix.list
+
+    - name: Update apt cache
+      apt:
+        update_cache: true
+
+    - name: Install Zabbix Agent
+      apt:
+        name: zabbix-agent
+        state: latest
+      notify: Restart Zabbix Agent
+
+    - name: Configure Server (Passive)
+      lineinfile:
+        path: /etc/zabbix/zabbix_agentd.conf
+        regexp: '^Server='
+        line: "Server={{ zabbix_server_ip }}"
+      notify: Restart Zabbix Agent
+
+    - name: Configure ServerActive
+      lineinfile:
+        path: /etc/zabbix/zabbix_agentd.conf
+        regexp: '^ServerActive='
+        line: "ServerActive={{ zabbix_server_ip }}"
+      notify: Restart Zabbix Agent
+
+    - name: Configure HostnameItem to use system hostname
+      lineinfile:
+        path: /etc/zabbix/zabbix_agentd.conf
+        regexp: '^HostnameItem='
+        line: "HostnameItem=system.hostname"
+      notify: Restart Zabbix Agent
+
+    - name: Comment out static Hostname to prevent conflict
+      replace:
+        path: /etc/zabbix/zabbix_agentd.conf
+        regexp: '^(Hostname=)'
+        replace: '#\1'
+      notify: Restart Zabbix Agent
+
+    - name: Ensure Zabbix Agent is running
+      service:
+        name: zabbix-agent
+        state: started
+        enabled: true
+
+    - name: Clean up downloaded deb file
+      file:
+        path: /tmp/zabbix-release_latest.deb
+        state: absent
+
+  handlers:
+    - name: Restart Zabbix Agent
+      service:
+        name: zabbix-agent
+        state: restarted

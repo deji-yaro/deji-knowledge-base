@@ -1,0 +1,11 @@
+---
+- name: Update and upgrade all servers
+  hosts: kube_servers
+  become: true
+
+  tasks:
+    - name: Run apt update and upgrade
+      apt:
+        update_cache: yes
+        upgrade: dist
+        autoremove: yes
